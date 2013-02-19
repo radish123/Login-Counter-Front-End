@@ -39,16 +39,16 @@
 
 -(void)setupViews
 {
-    // setup message field
-    self.messageBox = [[UITextView alloc] initWithFrame:CGRectMake(20, 20, 280, 73)];
+    // setup message box at top
+    self.messageBox = [[UITextView alloc] initWithFrame:CGRectMake(22, 22, 290, 73)];
     self.messageBox.layer.borderWidth = 1.0f;
-    self.messageBox.layer.borderColor = [[UIColor blackColor] CGColor];
+    self.messageBox.layer.borderColor = [[UIColor blueColor] CGColor];
     [self.view addSubview:self.messageBox];
     
     // setup logout button
     self.logoutButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.logoutButton setTitle:@"Logout" forState:UIControlStateNormal];
-    self.logoutButton.frame = CGRectMake(95, 166, 131, 49);
+    self.logoutButton.frame = CGRectMake(95, 168, 131, 49);
     [self.logoutButton addTarget:self action:@selector(logoutPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.logoutButton];
 }
