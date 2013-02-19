@@ -32,11 +32,15 @@
     [self setupViews];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    self.messageBox.text = [NSString stringWithFormat:@"Welcome %@. You have logged in %i times.", self.username, self.count];
+}
+
 -(void)setupViews
 {
     // setup message field
     self.messageBox = [[UITextView alloc] initWithFrame:CGRectMake(20, 20, 280, 73)];
-    self.messageBox.text = [NSString stringWithFormat:@"Welcome %@. You have logged in %i times.", self.username, self.count];
     self.messageBox.layer.borderWidth = 1.0f;
     self.messageBox.layer.borderColor = [[UIColor blackColor] CGColor];
     [self.view addSubview:self.messageBox];
@@ -49,7 +53,7 @@
     [self.view addSubview:self.logoutButton];
 }
 
--(void)logoutButtonPressed
+-(void)logoutPressed
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
